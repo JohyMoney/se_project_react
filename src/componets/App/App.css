@@ -1,3 +1,10 @@
-.App {
+.page {
+    background-color: #F3F3F3;;
   
+}
+
+.page__content {
+    max-width: 1360px;
+    margin: 0 auto;
+
 }
