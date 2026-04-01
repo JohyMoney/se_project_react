@@ -1,9 +1,11 @@
-function ItemCard({ item }) {
-    return (    <div key={item._id}>
-                <div><h2>{item.name}</h2></div>
-                <img src={item.link} alt={item.name} className="cards__image"/>
-              </div>)
+import "./ItemCard.css"
 
+function ItemCard({ item }) {
+    return   <li className="card">
+      <h2 className="card__name">{item.name}</h2>
+      <img className="card__image" src={item.image} alt={item.name} />
+      
+    </li>
 }
 
 export default ItemCard
