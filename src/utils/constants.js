@@ -1,3 +1,26 @@
+export const weatheroptions = [
+  {
+    day: true,
+    condition: "Clear",
+    url: new URL("../assets/day/clear.png", import.meta.url)
+  },
+  {
+    day: true,
+    condition: "Cloudy",
+    url: new URL("../assets/day/cloudy.png", import.meta.url)
+  },
+  {
+    day: false,
+    condition: "Cloudy",
+    url: new URL("../assets/night/cloudy.png", import.meta.url)
+  },
+  {
+    day: false,
+    condition: "Clear",
+    url: new URL("../assets/night/clear.png", import.meta.url)
+  }
+];
+
 export const defaultClothingItems = [
   {
     _id: 1,
@@ -113,4 +136,17 @@ export const defaultClothingItems = [
   },
 ];
 
+
+export const coordinates = {
+  latitude: 37.7749,
+  longitude: -122.4194,
+};
+
+export const apiKey = "c41924af7b13b583965bcd7736c4b93f";
+
+export const weatherTypes = {
+  hot: "hot",
+  warm: "warm",
+  cold: "cold",
+};
 export { defaultClothingItems };
