@@ -1,0 +1,13 @@
+@import url(./vendor/fonts/fonts.css);
+@import url(./vendor/normalize.css);
+
+body {
+	margin: 0;
+	font-family: var(--main-font);
+	color: #000000;
+	background: #f3f3f3;
+}
+
+#root {
+	min-height: 100vh;
+}
