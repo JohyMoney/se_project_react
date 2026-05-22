@@ -1,6 +1,15 @@
 import "./ModalWithForm.css";
 
-function ModalWithForm({ children, buttonText, title, isOpen, onClose, onSubmit }) {
+function ModalWithForm({
+  children,
+  buttonText,
+  title,
+  isOpen,
+  onClose,
+  onSubmit,
+  secondaryButtonText,
+  onSecondaryAction,
+}) {
   const handleOverlayClick = (evt) => {
     if (evt.target === evt.currentTarget) {
       onClose();
@@ -24,9 +33,20 @@ function ModalWithForm({ children, buttonText, title, isOpen, onClose, onSubmit 
             X
           </button>
           {children}
-          <button type="submit" className="modal__submit">
-            {buttonText}
-          </button>
+          <div className="modal__actions">
+            <button type="submit" className="modal__submit">
+              {buttonText}
+            </button>
+            {secondaryButtonText && onSecondaryAction && (
+              <button
+                type="button"
+                className="modal__secondary-btn"
+                onClick={onSecondaryAction}
+              >
+                {secondaryButtonText}
+              </button>
+            )}
+          </div>
         </form>
       </div>
     </div>

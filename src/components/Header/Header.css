@@ -29,6 +29,24 @@
   cursor: pointer;
 }
 
+.header__auth-buttons {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.header__auth-btn {
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 700;
+  cursor: pointer;
+  color: #000000;
+  padding: 0;
+}
+
 .header__user-container {
   display: flex;
   align-items: center;
@@ -44,4 +62,15 @@
 .header__avatar {
   width: 40px;
   height: 40px;
+  border-radius: 50%;
+}
+
+.header__avatar_placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #d8d8d8;
+  color: #2f2f2f;
+  font-size: 18px;
+  font-weight: 700;
 }

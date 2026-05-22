@@ -2,14 +2,22 @@ import ClothesSection from "../ClothesSection/ClothesSection";
 import Sidebar from "../Sidebar/Sidebar";
 import "./profile.css";
 
-export default function Profile({ clothingItems, onCardClick, onAddClick }) {
+export default function Profile({
+  clothingItems,
+  onCardClick,
+  onAddClick,
+  onEditProfile,
+  onSignOut,
+  onCardLike,
+}) {
   return (
     <section className="profile">
-      <Sidebar />
+      <Sidebar onEditProfile={onEditProfile} onSignOut={onSignOut} />
       <ClothesSection
         clothingItems={clothingItems}
         onCardClick={onCardClick}
         onAddClick={onAddClick}
+        onCardLike={onCardLike}
       />
     </section>
   );
