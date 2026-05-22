@@ -1,26 +1,33 @@
+import "./WeatherCard.css";
+import { weatherOptions } from "../../utils/constants.js";
+import { useContext } from "react";
+import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnitContext.js";
 
-import './WeatherCard.css'
-import { weatheroptions } from '../../utils/constants.js'
-
-function WeatherCard({ filterWeatherData = { isDay: true, condition: 'Clear', temp: { F: 75 } } }) {
-  const weatherOption = weatheroptions.filter((option) => {
-    return option.day === filterWeatherData.isDay && option.condition === filterWeatherData.condition;
-  })[0]
-
-  const weatherOptionURL = weatheroptions.filter((option) => {
-    return option.day === filterWeatherData.isDay && option.condition === filterWeatherData.condition;
-  })[0]
-
-  const weathercondition = fileredOptions[0]?.condition
-
+function WeatherCard({ weatherData }) {
+  const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
+  const displayCondition =
+    weatherData.condition === "Clear" ? "Clear" : "Clouds";
+  const weatherOption = weatherOptions.find(
+    (option) =>
+      option.day === weatherData.isDay &&
+      option.condition === displayCondition,
+  );
 
   return (
     <section className="weather-card">
-      <p className="weather-card__temp">{filterWeatherData.temp.F} &deg; F</p>
-      <img src={weatherOption?.url} alt={filterWeatherData.condition} className="weather-card__image" />
-      <p className="weather-card__condition">{filterWeatherData.condition}</p>
+      {weatherOption && (
+        <img
+          src={weatherOption.url}
+          alt={`${weatherData.condition} weather`}
+          className="weather-card__image"
+        />
+      )}
+      <p className="weather-card__temp">
+        {weatherData.temp[currentTemperatureUnit]} ° {currentTemperatureUnit}
+      </p>
+      <p className="weather-card__condition">{weatherData.type}</p>
     </section>
-  )
+  );
 }
 
-export default WeatherCard
+export default WeatherCard;

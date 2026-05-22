@@ -1,21 +1,56 @@
-import React, { useState } from "react"
-import './ModalwithForm.css'
+import "./ModalWithForm.css";
 
+function ModalWithForm({
+  children,
+  buttonText,
+  title,
+  isOpen,
+  onClose,
+  onSubmit,
+  secondaryButtonText,
+  onSecondaryAction,
+}) {
+  const handleOverlayClick = (evt) => {
+    if (evt.target === evt.currentTarget) {
+      onClose();
+    }
+  };
 
-function ModalwithForm({ children ,buttonText ,title, 
-    activeModal, onClose,}) {
-    return (
-      <div className={`modal ${activeModal === "add garment" && "modal_opened" }`}>
-        <div className="modal__content">
-       <form className="modal__form">
-       <h2 className="modal__title">{title}</h2>
-       <button className="modal__close" onClick={onClose} type="button">close</button>
-       {children}
-       <button type="submit" className="modal__submit">{buttonText}</button>
-       </form>
-         </div>
+  return (
+    <div
+      className={`modal ${isOpen ? "modal_opened" : ""}`}
+      onMouseDown={handleOverlayClick}
+    >
+      <div className="modal__content">
+        <form onSubmit={onSubmit} className="modal__form">
+          <h2 className="modal__title">{title}</h2>
+          <button
+            className="modal__close"
+            onClick={onClose}
+            type="button"
+            aria-label="Close modal"
+          >
+            X
+          </button>
+          {children}
+          <div className="modal__actions">
+            <button type="submit" className="modal__submit">
+              {buttonText}
+            </button>
+            {secondaryButtonText && onSecondaryAction && (
+              <button
+                type="button"
+                className="modal__secondary-btn"
+                onClick={onSecondaryAction}
+              >
+                {secondaryButtonText}
+              </button>
+            )}
+          </div>
+        </form>
       </div>
-    );
-};
+    </div>
+  );
+}
 
-export default ModalwithForm;
+export default ModalWithForm;
