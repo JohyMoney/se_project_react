@@ -7,7 +7,9 @@ function ItemModal({ activeModal, card, onClose, onDelete }) {
 
   const ownerId =
     typeof card?.owner === "string" ? card?.owner : card?.owner?._id;
-  const isOwn = Boolean(ownerId && currentUser?._id && ownerId === currentUser._id);
+  const isOwn = Boolean(
+    ownerId && currentUser?._id && ownerId === currentUser._id,
+  );
 
   const handleOverlayClick = (evt) => {
     if (evt.target === evt.currentTarget) {

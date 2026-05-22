@@ -1,13 +1,13 @@
 .profile {
-    display: flex;
-    align-items: flex-start;
-    gap: 56px;
-    padding: 20px 0 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 56px;
+  padding: 20px 0 0;
 }
 
 @media (max-width: 768px) {
-    .profile {
-        flex-direction: column;
-        gap: 24px;
-    }
+  .profile {
+    flex-direction: column;
+    gap: 24px;
+  }
 }

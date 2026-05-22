@@ -9,8 +9,7 @@ function WeatherCard({ weatherData }) {
     weatherData.condition === "Clear" ? "Clear" : "Clouds";
   const weatherOption = weatherOptions.find(
     (option) =>
-      option.day === weatherData.isDay &&
-      option.condition === displayCondition,
+      option.day === weatherData.isDay && option.condition === displayCondition,
   );
 
   return (
