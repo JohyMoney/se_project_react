@@ -2,6 +2,8 @@
 
 This project is a small React weather-based clothing recommendation app.
 
+Backend API: [se_project_express](https://github.com/JohyMoney/se_project_express)
+
 ## Features
 
 - Fetches current weather on app mount using OpenWeather API.

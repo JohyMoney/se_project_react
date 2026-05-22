@@ -9,8 +9,6 @@ const getWeather = (coordinates, apiKey) => {
 
     return Promise.reject(`Error: ${res.status}`);
   });
-
-  
 };
 
 const filterWeatherData = (data) => {

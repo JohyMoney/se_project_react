@@ -13,7 +13,9 @@ function Header({
   onRegisterClick,
 }) {
   const currentUser = useContext(CurrentUserContext);
-  const firstLetter = (currentUser?.name?.trim()?.charAt(0) || "U").toUpperCase();
+  const firstLetter = (
+    currentUser?.name?.trim()?.charAt(0) || "U"
+  ).toUpperCase();
   const hasAvatar = Boolean(currentUser?.avatar);
 
   const currentDate = new Date().toLocaleString("default", {
@@ -57,10 +59,18 @@ function Header({
         </>
       ) : (
         <div className="header__auth-buttons">
-          <button type="button" className="header__auth-btn" onClick={onRegisterClick}>
+          <button
+            type="button"
+            className="header__auth-btn"
+            onClick={onRegisterClick}
+          >
             Sign Up
           </button>
-          <button type="button" className="header__auth-btn" onClick={onLoginClick}>
+          <button
+            type="button"
+            className="header__auth-btn"
+            onClick={onLoginClick}
+          >
             Log In
           </button>
         </div>
