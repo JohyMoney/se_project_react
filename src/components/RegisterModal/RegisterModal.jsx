@@ -20,7 +20,7 @@ function RegisterModal({ isOpen, onClose, onRegister, onSwitchToLogin }) {
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    onRegister(values).catch(() => {});
+    onRegister(values) .catch(console.error);
   };
 
   return (

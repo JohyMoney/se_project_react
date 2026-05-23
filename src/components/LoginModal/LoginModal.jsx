@@ -18,7 +18,7 @@ function LoginModal({ isOpen, onClose, onLogin, onSwitchToRegister }) {
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    onLogin(values).catch(() => {});
+    onLogin(values) .catch(console.error);
   };
 
   return (

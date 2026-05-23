@@ -23,7 +23,7 @@ function EditProfileModal({ isOpen, onClose, onUpdateProfile }) {
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    onUpdateProfile(values).catch(() => {});
+    onUpdateProfile(values).catch(console.error);
   };
 
   return (

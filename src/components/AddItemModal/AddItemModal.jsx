@@ -24,7 +24,7 @@ function AddItemModal({ isOpen, onClose, onAddItem }) {
       .then(() => {
         setValues(initialValues);
       })
-      .catch(() => {});
+  .catch(console.error);
   };
 
   return (

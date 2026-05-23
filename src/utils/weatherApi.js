@@ -1,3 +1,11 @@
+import { checkResponse } from "./api";
+
+const getWeather = (coordinates, apiKey) => {
+  return fetch(`...`)
+    .then(checkResponse);
+};
+
+
 const getWeather = (coordinates, apiKey) => {
   const { latitude, longitude } = coordinates;
   return fetch(
@@ -12,6 +20,7 @@ const getWeather = (coordinates, apiKey) => {
 
   
 };
+
 
 const filterWeatherData = (data) => {
   const result = {};

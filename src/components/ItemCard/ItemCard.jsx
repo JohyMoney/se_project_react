@@ -35,9 +35,9 @@ function ItemCard({ item, onCardClick, onCardLike }) {
             type="button"
             className={`card__like-btn ${isLiked ? "card__like-btn_liked" : ""}`}
             onClick={handleLike}
-            aria-label="Like item"
+            aria-label={isLiked ? "Unlike item" : "Like item"}
           >
-            Like
+            <span className="card__like-icon" aria-hidden="true" />
           </button>
         )}
       </div>

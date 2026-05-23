@@ -29,10 +29,10 @@ function Header({
       <p className="header__date-and-location">
         {currentDate}, {weatherData.city || ""}
       </p>
-      <ToggleSwitch />
 
       {isLoggedIn ? (
-        <>
+        <div className="header__actions">
+          <ToggleSwitch />
           <button
             type="button"
             className="header__add-clothes-btn"
@@ -54,15 +54,26 @@ function Header({
               </div>
             )}
           </NavLink>
-        </>
+        </div>
       ) : (
-        <div className="header__auth-buttons">
-          <button type="button" className="header__auth-btn" onClick={onRegisterClick}>
-            Sign Up
-          </button>
-          <button type="button" className="header__auth-btn" onClick={onLoginClick}>
-            Log In
-          </button>
+        <div className="header__actions">
+          <ToggleSwitch />
+          <div className="header__auth-buttons">
+            <button
+              type="button"
+              className="header__auth-btn"
+              onClick={onRegisterClick}
+            >
+              Sign Up
+            </button>
+            <button
+              type="button"
+              className="header__auth-btn"
+              onClick={onLoginClick}
+            >
+              Log In
+            </button>
+          </div>
         </div>
       )}
     </header>

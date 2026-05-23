@@ -19,8 +19,15 @@
   margin: 0;
 }
 
+.header__actions {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
 .header__add-clothes-btn {
-  margin: 0 20px 0 auto;
+  margin: 0;
   border: none;
   background: transparent;
   font-size: 20px;
@@ -30,7 +37,6 @@
 }
 
 .header__auth-buttons {
-  margin-left: auto;
   display: flex;
   align-items: center;
   gap: 20px;
