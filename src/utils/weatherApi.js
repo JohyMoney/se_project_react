@@ -1,5 +1,3 @@
-import { checkResponse } from "./api";
-
 const getWeather = (coordinates, apiKey) => {
   const { latitude, longitude } = coordinates;
   return fetch(
