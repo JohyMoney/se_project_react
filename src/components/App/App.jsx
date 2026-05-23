@@ -46,7 +46,7 @@ function App() {
     condition: "Clear",
   });
   const [activeModal, setActiveModal] = useState("");
-  const [selectedCardId, setSelectedCardId] = useState({});
+  const [selectedCard, setSelectedCard] = useState(null);
   const [clothingItems, setClothingItems] = useState([]);
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
   const [currentUser, setCurrentUser] = useState(null);
@@ -61,7 +61,7 @@ function App() {
 
   const handleCardClick = (card) => {
     setActiveModal("preview");
-    setSelectedCardId(card);
+    setSelectedCard(card);
   };
 
   const handleAddClick = () => {
@@ -75,6 +75,7 @@ function App() {
 
   const closeActiveModal = () => {
     setActiveModal("");
+    setSelectedCard(null);
   };
 
   const onAddItem = (inputValues) => {
@@ -125,7 +126,9 @@ function App() {
     request(card._id, token)
       .then((updatedCard) => {
         setClothingItems((items) =>
-          items.map((item) => (item._id === updatedCard._id ? updatedCard : item)),
+          items.map((item) =>
+            item._id === updatedCard._id ? updatedCard : item,
+          ),
         );
       })
       .catch((error) => {
@@ -139,7 +142,9 @@ function App() {
         const jwt = data?.token;
 
         if (!jwt) {
-          throw new Error("Authentication token is missing in sign-in response");
+          throw new Error(
+            "Authentication token is missing in sign-in response",
+          );
         }
 
         localStorage.setItem(TOKEN_STORAGE_KEY, jwt);
@@ -299,7 +304,7 @@ function App() {
         />
         <ItemModal
           activeModal={activeModal}
-          card={selectedCardId}
+          card={selectedCard}
           onClose={closeActiveModal}
           onDelete={handleDeleteItem}
         />

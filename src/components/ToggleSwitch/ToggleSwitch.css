@@ -57,7 +57,3 @@
 .toggle-switch__checkbox:checked ~ .toggle-switch__circle {
   transform: translateX(28px);
 }
-
-
-
-

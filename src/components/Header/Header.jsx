@@ -13,7 +13,9 @@ function Header({
   onRegisterClick,
 }) {
   const currentUser = useContext(CurrentUserContext);
-  const firstLetter = (currentUser?.name?.trim()?.charAt(0) || "U").toUpperCase();
+  const firstLetter = (
+    currentUser?.name?.trim()?.charAt(0) || "U"
+  ).toUpperCase();
   const hasAvatar = Boolean(currentUser?.avatar);
 
   const currentDate = new Date().toLocaleString("default", {

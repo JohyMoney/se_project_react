@@ -12,7 +12,8 @@ export default function ClothesSection({
   const currentUser = useContext(CurrentUserContext);
 
   const ownItems = clothingItems.filter((item) => {
-    const ownerId = typeof item.owner === "string" ? item.owner : item.owner?._id;
+    const ownerId =
+      typeof item.owner === "string" ? item.owner : item.owner?._id;
     return ownerId === currentUser?._id;
   });
 
@@ -29,15 +30,14 @@ export default function ClothesSection({
         </button>
       </div>
       <ul className="cards__list">
-          {ownItems
-            .map((item) => (
-              <ItemCard
-                key={item._id}
-                item={item}
-                onCardClick={onCardClick}
-                onCardLike={onCardLike}
-              />
-            ))}
+        {ownItems.map((item) => (
+          <ItemCard
+            key={item._id}
+            item={item}
+            onCardClick={onCardClick}
+            onCardLike={onCardLike}
+          />
+        ))}
       </ul>
     </div>
   );
