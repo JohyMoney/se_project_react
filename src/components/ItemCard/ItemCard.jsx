@@ -41,7 +41,6 @@ function ItemCard({ item, onCardClick, onCardLike }) {
           </button>
         )}
       </div>
-      <p className="card__like-count">{item.likes?.length ?? 0}</p>
       <img className="card__image" src={item.link} alt={item.name} />
     </li>
   );
